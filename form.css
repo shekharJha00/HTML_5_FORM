@@ -1,0 +1,55 @@
+html,input{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Times, serif;
+  }
+  
+  body{
+    width: 100%;
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 2em;
+  }
+  
+  header{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    background: tomato;
+    font-weight: bold;
+    padding: 10px;
+  }
+  
+  form{
+    margin: 50px;
+  }
+  
+  div{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  label,input,button{
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  label{
+    text-align: right;
+    width: 30%;
+    margin-right: 2%;
+  }
+  
+  input{
+    flex: auto;
+  }
+  
+  button{
+    width: 30%;
+  }
+  
+  error-output{
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+  }

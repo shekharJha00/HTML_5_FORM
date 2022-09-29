@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo-Form-5</title>
+    <link rel="stylesheet" href="../Form.css">
+  </head>
+  <body>
+    <header class="headerContainer">HTML-5 Form</header>
+    <form>
+      <div>
+        <label for="Name">Text input field for Name:</label>
+        <input type="text" id="Name">
+        <error-output class="texterror" for="Name"></error-output>
+      </div>
+      <div>
+        <label for="pwd">Text input field for password:</label>
+        <input type="password" id="pwd">
+        <error-output class="pwderror" for="pwd"></error-output>
+      </div>
+      <div>
+        <label for="email">Text input field for E-mail:</label>
+        <input type="email" id="email">
+        <error-output class="emailerror" for="email"></error-output>
+      </div>
+      <div>
+        <label for="url">Text input field for Url:</label>
+        <input type="url" id="url">
+      </div>
+      <div>
+        <label for="Number">Text input field for Number:</label>
+        <input type="number" id="Number">
+        <error-output class="numerror" for="Number"></error-output>
+      </div>
+      <div>
+        <label for="Telephone">Text input field for Telephone:</label>
+        <input type="tel" id="Telephone">
+        <error-output class="telerror" for="Telephone"></error-output>
+      </div>
+      <div>
+        <label for="Search">Text input field for Search:</label>
+        <input type="search" id="Search">
+      </div>
+      <div>
+        <label for="date">Choose your DOB:</label>
+        <input type="datetime-local" id="date">
+        <span class="validity"></span>
+      </div>
+      <div>
+        <label for="Salary">Choose your Salary:</label>
+        <input type="range" id="Salary" min="50000" max="100000" step="1000" value="75000">
+        <output class="salary-output" for="Salary">75000</output>
+      </div>
+      <div>
+        <button>Submit</button>
+      </div>
+    </form>
+    <script>
+      const name = document.querySelector('#Name');
+      const texterror = document.querySelector('.texterror');
+      name.addEventListener('input',function(){
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+        if(nameRegex.test(name.value))
+          texterror.textContent ="";
+        else texterror.textContent ="Incorrect Name";
+      });
+      const salary = document.querySelector('#Salary');
+      const output = document.querySelector('.salary-output');
+      output.textContent = salary.value;
+      salary.addEventListener('input',function(){
+        output.textContent = salary.value;
+      });
+      const pwd = document.querySelector('#pwd');
+      const pwderror = document.querySelector('.pwderror');
+      pwd.addEventListener('input',function(){
+        let pwdRegex = RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[&%$#@?^*!~]{1}).{8,}$');
+        if(pwdRegex.test(pwd.value))
+          pwderror.textContent ="";
+        else pwderror.textContent ="Incorrect password";
+      });
+      const telephone = document.querySelector('#Telephone');
+      const telerror = document.querySelector('.telerror');
+      telephone.addEventListener('input',function(){
+        let telRegex = RegExp('^[0-9]{10,11}$');
+        if(telRegex.test(telephone.value))
+          telerror.textContent ="";
+        else telerror.textContent ="Incorrect telephone";
+      });
+    </script>
+  </body>
+</html>
